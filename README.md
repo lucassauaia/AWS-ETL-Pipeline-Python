@@ -1,4 +1,4 @@
-# AWS-ETL-Pipeline-Python
+# ETL Pipeline in AWS with Python
 
 ### Description:
 This GitHub repository houses a comprehensive ETL (Extract, Transform, Load) pipeline implemented on Amazon Web Services (AWS) using the powerful programming language Python. The ETL process is a fundamental component of data engineering, allowing seamless extraction of data from various sources, transformation according to specific requirements, and loading into a target data store for further analysis.
