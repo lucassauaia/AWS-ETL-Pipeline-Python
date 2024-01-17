@@ -15,37 +15,37 @@ This GitHub repository houses a comprehensive ETL (Extract, Transform, Load) pip
 ### Objective:
 Whether you are a data engineer, scientist, or analyst, this repository offers a streamlined solution for building, deploying, and maintaining ETL pipelines on AWS, empowering you to efficiently manage and process your data at scale.
 
-##AWS Architecture for ETL Pipeline
+## AWS Architecture for ETL Pipeline
 This architecture is designed to extract, transform, and load data using AWS services, including Amazon S3, AWS Glue, Amazon Redshift, and Amazon CloudWatch.
 
 
-###Architecture Description:
+### Architecture Description:
 1. **Amazon S3**: Used as source storage for the raw data.
 2. **IAM**: Provides permissions so that AWS Glue can access necessary resources.
 3. **Amazon Redshift**: Final storage database for the transformed data.
 4. **Amazon CloudWatch**: Monitors and logs your AWS Glue job.
 5. **AWS Glue**: Performs data extraction, transformation, and loading (ETL).
 
-##Implementation
-###Step 1: Amazon S3 Configuration
+## Implementation
+### Step 1: Amazon S3 Configuration
 1. In the AWS console, navigate to Amazon S3.
 2. Create a new bucket called `source-pipeline-etl`.
 3. Upload the `WA_Fn-UseC_-Telco-Customer-Churn.csv` file into the created bucket.
-###Step 2: Configuring the IAM Role
+### Step 2: Configuring the IAM Role
 1. Access IAM (Identity and Access Management) in the AWS console.
 2. Create a new role called `permission-pipeline-etl` that targets AWS Glue.
 3. Add the following policies to the role:
   *AmazonS3ReadOnlyAccess
   *CloudWatchLogsFullAccess
   *AmazonRedshiftFullAccess
-###Step 3: Configuring Amazon Redshift
+### Step 3: Configuring Amazon Redshift
 1. In the AWS console, go to Amazon Redshift.
 2. Create a new cluster called `redshift-pipeline` of type `dc2.large free tier`.
 3. Configure the database called `dev` with the `admin` user. Set a password and store it securely.
 4. On EC2, configure the security group to allow AWS Glue to connect to Redshift.
-###Step 4: Amazon CloudWatch
+### Step 4: Amazon CloudWatch
 CloudWatch will automatically create log groups for your AWS Glue job. There will be one group for error logs (`/aws-glue/python-jobs/error`) and another for output logs (`/aws-glue/python-jobs/output`).
-###Step 5: Configuring the AWS Glue ETL Job
+### Step 5: Configuring the AWS Glue ETL Job
 1. In the AWS console, go to AWS Glue and create a new ETL job called `etl-pipeline-to-redshift`.
 2. Use the Script Editor to insert your locally developed ETL script.
 3. Select the IAM Role `permission-pipeline-etl`.
@@ -55,7 +55,7 @@ CloudWatch will automatically create log groups for your AWS Glue job. There wil
   *Add job parameters to connect to Redshift so that sensitive data is not in the code: Glue Job Parameters
 6. Run the job manually. The expected output is: logs published in CloudWatch, creation of the `data_final` table in Redshift and insertion of data into the table. Output Logs Redshift Table
 
-##Libraries Used
+## Libraries Used
 ***boto3**: Amazon SDK for Python that manipulates AWS resources.
 ***BytesIO (from the io library)**: Interface for byte sequences that facilitates manipulation of S3 files as in-memory files.
 ***psycopg2**: Library for connecting to PostgreSQL that allows interaction with Redshift instances.
