@@ -37,9 +37,9 @@ This architecture is designed to extract, transform, and load data using AWS ser
 1. Access IAM (Identity and Access Management) in the AWS console.
 2. Create a new role called `permission-pipeline-etl` that targets AWS Glue.
 3. Add the following policies to the role:
-  *AmazonS3ReadOnlyAccess
-  *CloudWatchLogsFullAccess
-  *AmazonRedshiftFullAccess
+  * AmazonS3ReadOnlyAccess
+  * CloudWatchLogsFullAccess
+  * AmazonRedshiftFullAccess
 ### Step 3: Configuring Amazon Redshift
 1. In the AWS console, go to Amazon Redshift.
 2. Create a new cluster called `redshift-pipeline` of type `dc2.large free tier`.
