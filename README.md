@@ -17,6 +17,7 @@ Whether you are a data engineer, scientist, or analyst, this repository offers a
 
 ## AWS Architecture for ETL Pipeline
 This architecture is designed to extract, transform, and load data using AWS services, including Amazon S3, AWS Glue, Amazon Redshift, and Amazon CloudWatch.
+
 <picture>
 <img alt="Shows the AWS Architecture Flowchart." src="https://github.com/lucassauaia/AWS-ETL-Pipeline-Python/blob/df7c42294d58e2472925f7ce799fac5e17bf80e7/assets/images/AWS%20Architecture.png">
 </picture>
