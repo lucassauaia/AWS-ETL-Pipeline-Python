@@ -56,8 +56,8 @@ CloudWatch will automatically create log groups for your AWS Glue job. There wil
 6. Run the job manually. The expected output is: logs published in CloudWatch, creation of the `data_final` table in Redshift and insertion of data into the table. Output Logs Redshift Table
 
 ## Libraries Used
--**boto3**: Amazon SDK for Python that manipulates AWS resources.
--**BytesIO (from the io library)**: Interface for byte sequences that facilitates manipulation of S3 files as in-memory files.
--**psycopg2**: Library for connecting to PostgreSQL that allows interaction with Redshift instances.
--**sys**: Python's built-in library for interacting with the interpreter and passing command-line arguments.
--**getResolvedOptions (from the awsglue.utils library)**: AWS Glue SDK function that retrieves parameters from a GlueJob
+- **boto3**: Amazon SDK for Python that manipulates AWS resources.
+- **BytesIO (from the io library)**: Interface for byte sequences that facilitates manipulation of S3 files as in-memory files.
+- **psycopg2**: Library for connecting to PostgreSQL that allows interaction with Redshift instances.
+- **sys**: Python's built-in library for interacting with the interpreter and passing command-line arguments.
+- **getResolvedOptions (from the awsglue.utils library)**: AWS Glue SDK function that retrieves parameters from a GlueJob
